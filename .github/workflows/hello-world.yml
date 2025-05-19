@@ -1,29 +1,16 @@
-
-####################### Lab 5 #######################################
-name: Environment Variables Example
+name: GitHub Secrets Demo
 
 on:
   push:
     branches:
       - main
 
-env:
-  GLOBAL_VAR: "🌍 Hello from Global Env"
-  GREETING_NAME: "Harsh Tyagi"
-
 jobs:
-  use-env-vars:
+  use-secret:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show Global Env Variables
+      - name: Access Secret Securely
         run: |
-          echo "GLOBAL_VAR = $GLOBAL_VAR"
-          echo "GREETING_NAME = $GREETING_NAME"
-
-      - name: Step-Level Variable
-        env:
-          STEP_ONLY: "👋 Hello from Step-Level"
-        run: |
-          echo "STEP_ONLY = $STEP_ONLY"
-          echo "Accessing global inside step: $GREETING_NAME"
+          echo "🔐 Using a secret in a secure way!"
+          echo "My password is: ${{ secrets.MY_SECRET_PASSWORD }}"
