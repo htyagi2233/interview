@@ -13,4 +13,4 @@ jobs:
       - name: Access Secret Securely
         run: |
           echo "🔐 Using a secret in a secure way!"
-          echo "My password is: ${{ secrets.MY_SECRET_PASSWORD }}"
+          echo "My password is: ${{ secrets.Mypassword@u }}"
