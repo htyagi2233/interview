@@ -12,3 +12,96 @@
 #       - name: Print Hello Message
 #         run: echo "Hello from GitHub Actions 🚀"
 
+#############################################################
+name: Multi Event Trigger
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   show-message:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Show trigger message
+#         run: echo "🚀 This workflow was triggered by either PUSH or PULL REQUEST to main branch."
+
+
+#############################################################
+# name: Job and Steps Example
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     name: 🛠️ Build Job
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Step 1 - Checkout Code
+#         uses: actions/checkout@v3
+
+#       - name: Step 2 - Say Hello
+#         run: echo "👋 Hello from the Build Job!"
+
+#       - name: Step 3 - Conditional Step
+#         if: ${{ github.ref == 'refs/heads/main' }}
+#         run: echo "✅ This step runs only on the main branch"
+
+#############################################################
+# name: Matrix OS Test
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   test-on-matrix:
+#     name: Test on ${{ matrix.os }}
+#     runs-on: ${{ matrix.os }}
+
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, windows-latest, macos-latest]
+
+#     steps:
+#       - name: Print system info
+#         run: |
+#           echo "Running on ${{ matrix.os }}"
+#           uname -a || systeminfo
+####################### Lab 5 #######################################
+name: Environment Variables Example
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GLOBAL_VAR: "🌍 Hello from Global Env"
+  GREETING_NAME: "Harsh Tyagi"
+
+jobs:
+  use-env-vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show Global Env Variables
+        run: |
+          echo "GLOBAL_VAR = $GLOBAL_VAR"
+          echo "GREETING_NAME = $GREETING_NAME"
+
+      - name: Step-Level Variable
+        env:
+          STEP_ONLY: "👋 Hello from Step-Level"
+        run: |
+          echo "STEP_ONLY = $STEP_ONLY"
+          echo "Accessing global inside step: $GREETING_NAME"
