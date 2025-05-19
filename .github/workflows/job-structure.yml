@@ -1,23 +1,23 @@
-name: Job and Steps Example
+# name: Job and Steps Example
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build:
-    name: 🛠️ Build Job
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     name: 🛠️ Build Job
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Step 1 - Checkout Code
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Step 1 - Checkout Code
+#         uses: actions/checkout@v3
 
-      - name: Step 2 - Say Hello
-        run: echo "👋 Hello from the Build Job!"
+#       - name: Step 2 - Say Hello
+#         run: echo "👋 Hello from the Build Job!"
 
-      - name: Step 3 - Conditional Step
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: echo "✅ This step runs only on the main branch"
+#       - name: Step 3 - Conditional Step
+#         if: ${{ github.ref == 'refs/heads/main' }}
+#         run: echo "✅ This step runs only on the main branch"
 

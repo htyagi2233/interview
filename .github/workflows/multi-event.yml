@@ -1,17 +1,17 @@
-name: Multi Event Trigger
+# name: Multi Event Trigger
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
 
-jobs:
-  show-message:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show trigger message
-        run: echo "🚀 This workflow was triggered by either PUSH or PULL REQUEST to main branch."
+# jobs:
+#   show-message:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Show trigger message
+#         run: echo "🚀 This workflow was triggered by either PUSH or PULL REQUEST to main branch."
 
