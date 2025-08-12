@@ -31,7 +31,7 @@ post {
                  body: "The build failed. Please check console logs:\n${env.BUILD_URL}"
         }
     }
-}
+
 // यह Jenkinsfile एक साधारण pipeline को परिभाषित करता है जिसमें तीन चरण हैं: Build, Test, और Deploy
 // प्रत्येक चरण में एक साधारण echo कमांड है जो उस चरण का विवरण देता है
 // आप इसे अपने प्रोजेक्ट के अनुसार अनुकूलित कर सकते हैं
