@@ -20,7 +20,7 @@ pipeline {
                     branches: [[name: 'main']],
                     userRemoteConfigs: [[
                         url: 'https://https://github.com/htyagi2233/interview.git',
-                        credentialsId: 'github-pat' // ⬅️ GitHub credentials here
+                        credentialsId: 'github-credentials' // ⬅️ GitHub credentials here
                     ]]
                 ])
             }
