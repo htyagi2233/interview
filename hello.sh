@@ -1,2 +1,4 @@
 #!/bin/bash
-echo " This file has run from GitHub Repo"
+env=$1
+echo " Hello I am in $env environment"
+
